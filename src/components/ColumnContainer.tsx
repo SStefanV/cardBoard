@@ -61,9 +61,9 @@ function ColumnContainer({
         style={style}
         className="
       bg-columnBackgroundColor
-      opacity-40
+      opacity-80
       border-2
-      border-pink-500
+      border-sky-300
       w-[350px]
       h-[500px]
       max-h-[500px]
@@ -87,6 +87,8 @@ function ColumnContainer({
         rounded-md
         flex
         flex-col
+        border
+        border-sky-200
       `}
     >
       {/* Column title */}
@@ -99,17 +101,20 @@ function ColumnContainer({
         className="
       bg-mainBackgroundColor
       text-md
-      h-[60px]
+      text-blue-100
+      h-[50px]
       cursor-grab
       rounded-md
       rounded-b-none
+      pt-5
       p-3
       font-bold
-      border-columnBackgroundColor
-      border-4
+     
       flex
       items-center
       justify-between
+      border-b-[1px]
+      border-sky-200
       "
       >
         <div className="flex gap-2">
@@ -127,12 +132,12 @@ function ColumnContainer({
           >
             {column.index}
           </div>
-          {!editMode && column.title}
+          {!editMode && column.title.toUpperCase()}
           {editMode && (
             <input
-              className="bg-black focus:border-rose-500 border rounded outline-none px-2"
+              className="bg-black  focus:border-sky-300 border rounded outline-none px-2"
               value={column.title}
-              onFocus={(e) => (e.target.value = "")}
+              //onFocus={(e) => (e.target.value = "")}
               onChange={(e) => updateColumn(column.id, e.target.value)}
               autoFocus
               onBlur={() => {
@@ -163,7 +168,7 @@ function ColumnContainer({
       </div>
 
       {/* Column task container */}
-      <div className="flex flex-grow flex-col gap-4 p-2 overflow-x-hidden overflow-y-auto">
+      <div className="flex flex-grow flex-col gap-4 p-2 overflow-x-hidden overflow-y-auto mt-3">
         <SortableContext items={tasksIds}>
           {tasks.map((task) => (
             <TaskCard
@@ -177,9 +182,9 @@ function ColumnContainer({
       </div>
       {/* Column footer */}
       <button
-        className="flex gap-2 items-center border-columnBackgroundColor border-2 rounded-md p-4 border-x-columnBackgroundColor hover:bg-mainBackgroundColor hover:text-rose-500 active:bg-black"
+        className="flex gap-2 items-center border-columnBackgroundColor border-2 rounded-md p-4 border-x-columnBackgroundColor hover:bg-mainBackgroundColor hover:text-sky-300 active:bg-black"
         onClick={() => {
-          const userInput = window.prompt("logroza, inter or fabricas");
+          const userInput = window.prompt("log, inter or fab");
           if (userInput !== null) {
             createTask(column.id, userInput);
           }

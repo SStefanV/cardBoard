@@ -93,7 +93,7 @@ function KanbanBoard() {
       "
           >
             <PlusIcon />
-            Add Column
+            Nuevo Conductor
           </button>
         </div>
 

@@ -90,11 +90,11 @@ function TaskCard({ task, deleteTask, updateTask }: Props) {
       {...listeners}
       onClick={toggleEditMode}
       className={`${
-        task.division === "logroza"
+        task.division === "log"
           ? "bg-red-900"
           : task.division === "inter"
           ? "bg-green-900"
-          : task.division === "fabricas"
+          : task.division === "fab"
           ? "bg-white text-black font-semibold"
           : "bg-white text-black"
       } p-2.5 h-[50px] min-h-[50px] items-center flex text-left text-sm rounded-xl hover:ring-2 hover:ring-inset hover:ring-rose-500 cursor-grab relative task`}
