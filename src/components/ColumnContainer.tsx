@@ -11,7 +11,7 @@ interface Props {
   deleteColumn: (id: Id) => void;
   updateColumn: (id: Id, title: string) => void;
 
-  createTask: (columnId: Id) => void;
+  createTask: (columnId: Id, division: string) => void;
   updateTask: (id: Id, content: string) => void;
   deleteTask: (id: Id) => void;
 
@@ -179,7 +179,10 @@ function ColumnContainer({
       <button
         className="flex gap-2 items-center border-columnBackgroundColor border-2 rounded-md p-4 border-x-columnBackgroundColor hover:bg-mainBackgroundColor hover:text-rose-500 active:bg-black"
         onClick={() => {
-          createTask(column.id);
+          const userInput = window.prompt("logroza, inter or fabricas");
+          if (userInput !== null) {
+            createTask(column.id, userInput);
+          }
         }}
       >
         <PlusIcon />

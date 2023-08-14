@@ -12,7 +12,7 @@ interface Props {
 
 function TaskCard({ task, deleteTask, updateTask }: Props) {
   const [mouseIsOver, setMouseIsOver] = useState(false);
-  const [editMode, setEditMode] = useState(true);
+  const [editMode, setEditMode] = useState(false);
 
   const {
     setNodeRef,
@@ -47,7 +47,7 @@ function TaskCard({ task, deleteTask, updateTask }: Props) {
         style={style}
         className="
         opacity-30
-      bg-mainBackgroundColor p-2.5 h-[80px] min-h-[80px] items-center flex text-left rounded-xl border-2 border-rose-500  cursor-grab relative
+      bg-mainBackgroundColor p-2.5 h-[50px] min-h-[50px] items-center flex text-left rounded-xl border-2 border-rose-500  cursor-grab relative
       "
       />
     );
@@ -60,7 +60,7 @@ function TaskCard({ task, deleteTask, updateTask }: Props) {
         style={style}
         {...attributes}
         {...listeners}
-        className="bg-mainBackgroundColor p-2.5 h-[70px] min-h-[70px] items-center flex text-left  rounded-xl hover:ring-2 hover:ring-inset hover:ring-rose-500 cursor-grab relative"
+        className="bg-mainBackgroundColor p-2.5 h-[50px] min-h-[50px] items-center flex text-left  rounded-xl hover:ring-2 hover:ring-inset hover:ring-rose-500 cursor-grab relative"
       >
         <textarea
           className="
@@ -97,7 +97,7 @@ function TaskCard({ task, deleteTask, updateTask }: Props) {
           : task.division === "fabricas"
           ? "bg-white text-black font-semibold"
           : "bg-white text-black"
-      } p-2.5 h-[70px] min-h-[70px] items-center flex text-left text-sm rounded-xl hover:ring-2 hover:ring-inset hover:ring-rose-500 cursor-grab relative task`}
+      } p-2.5 h-[50px] min-h-[50px] items-center flex text-left text-sm rounded-xl hover:ring-2 hover:ring-inset hover:ring-rose-500 cursor-grab relative task`}
       onMouseEnter={() => {
         setMouseIsOver(true);
       }}

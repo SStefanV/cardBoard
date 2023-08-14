@@ -126,12 +126,12 @@ function KanbanBoard() {
     </div>
   );
 
-  function createTask(columnId: Id) {
+  function createTask(columnId: Id, division: string) {
     const newTask: Task = {
       id: generateId(),
       columnId: columnId,
       content: "",
-      division: "",
+      division: division,
     };
 
     setTasks([...tasks, newTask]);
