@@ -8,7 +8,7 @@ export const defaultCols: Column[] = [
   },
   {
     id: "todo",
-    title: "Work in progress",
+    title: "Work To Do",
     index: "2",
   },
   {
